@@ -1,0 +1,80 @@
+body{
+    background-color: rgb(250, 235, 215, .5);
+}
+
+#data{
+    color: rgb(105, 105, 105, 4);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+table{
+    width: 80%;
+    color: rgb(105, 105, 105, 4);
+    background-color: whitesmoke;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+tr:nth-of-type(even){
+    background-color: antiquewhite;
+}
+
+th{
+    border: 1px solid rgb(105, 105, 105, 4);
+}
+
+td{
+    border: 1px solid rgb(105, 105, 105, 4);
+    text-align: center;
+}
+
+td:first-child{
+    width: 15%;
+}
+
+td:last-child{
+    width: 10%;
+}
+
+td:nth-child(2){
+    font-size: 200%;
+    font-weight: bold;
+}
+
+td:nth-child(3){
+    font-size: 200%;
+    font-weight: bold;
+}
+
+td:nth-child(4){
+    width: 10%;
+}
+
+.btnUpdate{
+    color: whitesmoke;
+    background-color: orange;
+    box-align: center;
+    border: 1px solid darkorange;
+    border-radius: 3px;
+    margin: 10px 0;
+}
+
+.btnUpdate:hover{
+    box-shadow: black 1px 1px 4px;
+}
+
+.btnDel{
+    color: whitesmoke;
+    background-color: red;
+    border: 1px solid darkred;
+    border-radius: 3px;
+    box-align: center;
+}
+
+.btnDel:hover{
+    box-shadow: black 1px 1px 4px;
+}
+
+.fotka{
+    width: 150px;
+}
