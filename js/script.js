@@ -1,5 +1,6 @@
 window.onload=function(){
 
+    var id=0;
     var listRow=document.getElementsByTagName("tr");
     var listBtnUpdate=document.getElementsByClassName("btnUpdate");
     var listBtnDel=document.getElementsByClassName("btnDel");
@@ -11,27 +12,45 @@ window.onload=function(){
         listBtnDel[i].onclick=clickDel;
     }
 
-    //document.getElementsByClassName("btnUpdate").onclick=
-    function clickUpdate(){
-        //alert("!");
+    function findRow(){
         var elem=document.querySelectorAll(":hover");
-        var id=0;
         for(i=0;i<elem.length;i++){
-            alert(elem[i].tagName);
             if(elem[i].tagName=="TR"){
                 id=elem[i].getAttribute("id");
-                alert(id);
             }
         }
+    }
+    function clickUpdate(){
+        findRow();
         for(i=0;i<listRow.length;i++){
-            alert(listRow[i].getAttribute("id"));
-            
+            if(listRow[i].getAttribute("id")==id){
+                var dataRow=listRow[i].getElementsByTagName("TD");
+                var newData=prompt("Update data?", dataRow[1].innerHTML+' '+dataRow[2].innerHTML);
+                if(newData==dataRow[1].innerHTML+' '+dataRow[2].innerHTML){
+                    alert("Data don't change");
+                }
+                else{
+                    var names=newData.split(' ',2);
+                    for(j=0;j<names.length;j++){
+                        var cloneData=dataRow[j+1].cloneNode(true);
+                        cloneData.innerHTML=names[j];
+                        dataRow[j+1].parentNode.insertBefore(cloneData,dataRow[j+1].nextSibling);
+                        dataRow[j+1].remove();
+                    }
+                    alert("Data is update");
+                }
+            }
         }
-
-        //var element=document.getElementsByTagName("table")[ind];
-        var newData=prompt("Update data?", element.nodeValue);
     }
     function clickDel(){
-        confirm("You sure?");
+        findRow();
+        for(i=0;i<listRow.length;i++){
+            if(listRow[i].getAttribute("id")==id){
+                if(confirm("You sure?")){
+                    listRow[i].remove();
+                    alert("Done!");
+                }
+            }
+        }
     }
 }
