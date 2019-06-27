@@ -53,6 +53,7 @@ td:nth-child(4){
 .btnUpdate{
     color: whitesmoke;
     background-color: orange;
+    height: 30px;
     box-align: center;
     border: 1px solid darkorange;
     border-radius: 3px;
@@ -66,6 +67,7 @@ td:nth-child(4){
 .btnDel{
     color: whitesmoke;
     background-color: red;
+    height: 30px;
     border: 1px solid darkred;
     border-radius: 3px;
     box-align: center;
